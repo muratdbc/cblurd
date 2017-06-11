@@ -25,6 +25,7 @@
           url: '/cleaning/new',
           templateUrl: 'app/pages/cleaning/new/new.html',
           title: 'Add Cleaning',
+          controller: 'AddCleaningCtrl',
           sidebarMeta: {
             order: 0,
           },

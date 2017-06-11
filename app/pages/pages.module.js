@@ -22,7 +22,7 @@
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/cleaning/new');
 
     baSidebarServiceProvider.addStaticItem({
       title: 'Account',

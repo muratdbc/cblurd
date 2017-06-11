@@ -8,14 +8,15 @@
   angular.module('BlurAdmin.pages', [
     'ui.router',
 
-    'BlurAdmin.pages.dashboard',
-    'BlurAdmin.pages.ui',
-    'BlurAdmin.pages.components',
-    'BlurAdmin.pages.form',
-    'BlurAdmin.pages.tables',
-    'BlurAdmin.pages.charts',
-    'BlurAdmin.pages.maps',
-    'BlurAdmin.pages.profile',
+    // 'BlurAdmin.pages.dashboard',
+    // 'BlurAdmin.pages.ui',
+    // 'BlurAdmin.pages.components',
+    // 'BlurAdmin.pages.form',
+    // 'BlurAdmin.pages.tables',
+    // 'BlurAdmin.pages.charts',
+    // 'BlurAdmin.pages.maps',
+    // 'BlurAdmin.pages.profile',
+    'CC.pages.cleaning'
   ])
       .config(routeConfig);
 
@@ -24,7 +25,7 @@
     $urlRouterProvider.otherwise('/dashboard');
 
     baSidebarServiceProvider.addStaticItem({
-      title: 'Pages',
+      title: 'Account',
       icon: 'ion-document',
       subMenu: [{
         title: 'Sign In',
@@ -44,7 +45,7 @@
       }]
     });
     baSidebarServiceProvider.addStaticItem({
-      title: 'Menu Level 1',
+      title: 'Payments',
       icon: 'ion-ios-more',
       subMenu: [{
         title: 'Menu Level 1.1',

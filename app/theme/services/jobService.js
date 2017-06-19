@@ -13,7 +13,8 @@
       // this object will be used by controller
       var service = {
           getJobs: getJobs,
-          getJob: getJob
+          getJob: getJob,
+          getAllJobs: getAllJobs
       };
 
 
@@ -23,6 +24,9 @@
       }
       function getJob(userId,cleaningId){
         return Restangular.one('users/'+userId+'/jobs/'+cleaningId).get();
+      }
+      function getAllJobs(){
+        return Restangular.all('jobs').getList();
       }
       return service;
     }])

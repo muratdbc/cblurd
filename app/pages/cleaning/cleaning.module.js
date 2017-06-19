@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('CC.pages.cleaning', [])
+  angular.module('CC.pages.cleaning', ['ngFileUpload'])
       .config(routeConfig);
 
   /** @ngInject */
@@ -29,15 +29,16 @@
           sidebarMeta: {
             order: 0,
           },
+        })
+        .state('cleaning.list', {
+          url: '/cleanings',
+          templateUrl: 'app/pages/cleaning/new/list.html',
+          title: 'List View',
+          controller: 'ListCleaningCtrl',
+          sidebarMeta: {
+            order: 100,
+          },
         });
-        // .state('cleaning.layouts', {
-        //   url: '/cleanings',
-        //   templateUrl: 'app/pages/form/layouts/layouts.html',
-        //   title: 'Form Layouts',
-        //   sidebarMeta: {
-        //     order: 100,
-        //   },
-        // })
         // .state('form.wizard',
         // {
         //   url: '/wizard',

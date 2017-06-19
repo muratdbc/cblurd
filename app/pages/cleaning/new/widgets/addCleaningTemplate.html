@@ -1,35 +1,47 @@
-<form>
+<form class="form-horizontal">
   <div class="form-group">
-    <label for="input01">Text</label>
-    <input type="text" class="form-control" id="input01" placeholder="Text">
+    <label for="rentalAddress" class="col-sm-3 control-label">Address</label>
+    <div class="col-sm-9">
+      <input type="text" ng-model="addCleaning.address" class="form-control" id="rentalAddress" placeholder="Rental Address">
+    </div>
   </div>
   <div class="form-group">
-    <label for="input02">Password</label>
-    <input type="password" class="form-control" id="input02" placeholder="Password">
+    <label for="inputEmail3" class="col-sm-3 control-label">Job Date</label>
+    <div class="col-sm-9">
+      <input type="date" ng-model="addCleaning.jobDate" class="form-control" id="jobDate" placeholder="Job Date">
+    </div>
   </div>
   <div class="form-group">
-    <label for="input03">Rounded Corners</label>
-    <input type="text" class="form-control form-control-rounded" id="input03" placeholder="Rounded Corners">
+    <label for="inputPassword3" class="col-sm-3 control-label">Job Time</label>
+    <div class="col-sm-9">
+      <input type="text" ng-model="addCleaning.jobTime" class="form-control" id="jobTime" placeholder="Job Time">
+    </div>
   </div>
   <div class="form-group">
-    <label for="input04">With help</label>
-    <input type="text" class="form-control" id="input04" placeholder="With help">
-    <span class="help-block sub-little-text">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+    <label for="accessCode" class="col-sm-3 control-label">Access Code</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" ng-model="addCleaning.accessCode" id="inputPassword3" placeholder="Access Code or Location of the keys">
+    </div>
   </div>
   <div class="form-group">
-    <label for="input05">Disabled Input</label>
-    <input type="text" class="form-control" id="input05" placeholder="Disabled Input" disabled>
-  </div>
-
-  <div class="form-group">
-    <label for="textarea01">Textarea</label>
-    <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea>
-  </div>
-
-  <div class="form-group">
-    <input type="text" class="form-control input-sm" id="input2" placeholder="Small Input">
+    <label for="textarea01" class="col-sm-3 control-label">Notes</label>
+    <div class="col-sm-9">
+      <textarea placeholder="Default Input"  ng-model="addCleaning.notes" class="form-control" id="textarea01"></textarea>
+    </div>
   </div>
   <div class="form-group">
-    <input type="text" class="form-control input-lg" id="input4" placeholder="Large Input">
+    <div class="col-sm-offset-3 col-sm-9">
+      <div class="checkbox">
+        <label class="custom-checkbox">
+          <input type="checkbox"  ng-model="addCleaning.b2b" >
+          <span>Back to Back</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <button type="submit" ng-click="addJob()"nclass="btn btn-warning">Add Cleaning</button>
+    </div>
   </div>
 </form>

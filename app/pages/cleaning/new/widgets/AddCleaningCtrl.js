@@ -10,12 +10,12 @@
 
   /** @ngInject */
   function AddCleaningCtrl(jobService,$scope) {
-
+    $scope.addCleaning={}
+    $scope.addJob=function(){
+      console.log($scope.addCleaning)
+    }
     console.log("inside Add Cleaning Controller")
-    jobService.getJob(1,1).then(function(response){
-      $scope.job=response.job
-      console.log($scope.job)
-    })
+
   }
 
 })();

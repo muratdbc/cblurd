@@ -1,0 +1,48 @@
+
+<div class="row" ng-repeat="job in jobs">
+  <div class="col-lg-6 col-sm-12  col-lg-offset-3">
+    <div class="center-block">
+      <uib-accordion>
+        <uib-accordion-group heading="{{job.address_1 | limitTo :30}} at {{job.job_date | date : 'longDate'}}" panel-class="bootstrap-panel accordion-panel panel-default">
+          <uib-tabset>
+            <uib-tab heading="Job Details">
+              <div >
+                Rental Address  : {{job.address_1}}
+              </div>
+              <br>
+              <div>
+                Source : {{job.external_source}}
+              </div>
+              <br>
+              <div>
+                Access Code : {{job.access_code}}
+              </div>
+              <br>
+              <div>
+                Job Date : {{job.job_date | date : 'medium'}}
+              </div>
+
+            </uib-tab>
+            <uib-tab heading="Photos">
+              <button ngf-select="uploadFiles($files)" multiple
+                    accept="image/*" >
+                       Select Files</button>
+                   <br><br>
+                   Files:
+                   <ul>
+                     <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$errorParam}}
+                       <span class="progress" ng-show="f.progress >= 0">
+                         <div style="width:{{f.progress}}%"
+                             ng-bind="f.progress + '%'"></div>
+                       </span>
+                     </li>
+                     <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
+                     </li>
+
+            </uib-tab>
+          </uib-tabset>
+        </uib-accordion-group>
+      </uib-accordion>
+    </div>
+  </div>
+</div>

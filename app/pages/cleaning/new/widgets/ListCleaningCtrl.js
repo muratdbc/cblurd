@@ -22,24 +22,35 @@
        access_key: 'AKIAJ2T2UGRVGHAXPZBQ',
        secret_key: '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'
      }
-     $scope.uploadFiles = function(files) {
+     $scope.uploadFiles = function(files,id) {
        AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
        AWS.config.region = 'us-west-2';
+       $scope.files=files
        var bucket = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
-       debugger
        angular.forEach(files, function(file) {
-         var uniqueFileName = $scope.uniqueString() + '-' + file.name;
+         file.progress=0
 
+         var uniqueFileName = $scope.uniqueString() + '-' + file.name;
          var params = { Key: uniqueFileName, ContentType: file.type, Body:file, ServerSideEncryption: 'AES256' };
 
-         debugger
          bucket.putObject(params, function(err, data) {
            if(err) {
              alert("something went wrong try again")
              return false;
            }
            else {
-            // create photos with user_id and photo_url
+             file.progress = 50;
+
+             var photo={
+               url: "https://s3-us-west-2.amazonaws.com/c-cleaning/"+uniqueFileName,
+               job_id: id
+             }
+             console.log(photo)
+            jobService.createPhoto(photo)
+            .then(function(response){
+              file.progress = 100;
+              console.log(response)
+            })
            }
          })
        });

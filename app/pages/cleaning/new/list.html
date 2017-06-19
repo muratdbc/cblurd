@@ -24,21 +24,17 @@
 
             </uib-tab>
             <uib-tab heading="Photos">
-              <button ngf-select="uploadFiles($files)" multiple
-                    accept="image/*" >
-                       Select Files</button>
-                   <br><br>
+              <button ngf-select="uploadFiles($files,job.id)" multiple accept="image/*">Select Files</button>
+                  <br>
                    Files:
                    <ul>
                      <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$errorParam}}
-                       <span class="progress" ng-show="f.progress >= 0">
-                         <div style="width:{{f.progress}}%"
+                       <span class="progress" style=" display: block;background: orange" ng-show="f.progress >= 0">
+                         <div style="width:{{f.progress}}%;font-size: smaller;background: orange;width: 0;"
                              ng-bind="f.progress + '%'"></div>
                        </span>
                      </li>
-                     <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
-                     </li>
-
+                  </ul>
             </uib-tab>
           </uib-tabset>
         </uib-accordion-group>

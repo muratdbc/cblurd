@@ -14,7 +14,8 @@
       var service = {
           getJobs: getJobs,
           getJob: getJob,
-          getAllJobs: getAllJobs
+          getAllJobs: getAllJobs,
+          createPhoto: createPhoto
       };
 
 
@@ -27,6 +28,9 @@
       }
       function getAllJobs(){
         return Restangular.all('jobs').getList();
+      }
+      function createPhoto(photo){
+        return Restangular.all('photos').post(photo)
       }
       return service;
     }])

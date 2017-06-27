@@ -12,7 +12,18 @@
   function pageTop() {
     return {
       restrict: 'E',
-      templateUrl: 'app/theme/components/pageTop/pageTop.html'
+      templateUrl: 'app/theme/components/pageTop/pageTop.html',
+      controller: function($scope,userService,$location,$cookies,$rootScope){
+        $scope.signout=function(){
+          userService.signout()
+          .then(function(response){
+            $cookies.remove("user_id");
+            $rootScope.isLoggedIn=false
+            $location.path('/login');
+          })
+
+        }
+      }
     };
   }
 

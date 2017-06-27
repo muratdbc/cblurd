@@ -102,6 +102,7 @@
   <script src="../lib/restangular.js"></script>
   <script src="../lib/aws-sdk.js"></script>
   <script src="../lib/ng-file-upload.js"></script>
+  <script src="../lib/angular-cookies.js"></script>
 
   <!-- endbower -->
   <!-- endbuild -->
@@ -243,6 +244,9 @@
   <script src="app/pages/cleaning/new/widgets/AddCleaningCtrl.js"></script>
   <script src="app/pages/cleaning/new/widgets/ListCleaningCtrl.js"></script>
   <script src="app/theme/services/jobService.js"></script>
+  <script src="app/theme/services/userService.js"></script>
+  <script src="app/pages/login/logInPageCtrl.js"></script>
+  <script src="app/pages/login/signUpPageCtrl.js"></script>
 
 </head>
 <body>
@@ -250,20 +254,21 @@
 
 <main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
 
-  <ba-sidebar></ba-sidebar>
-  <page-top></page-top>
+  <ba-sidebar ng-show="isLoggedIn"></ba-sidebar>
+  <page-top ng-show="isLoggedIn"></page-top>
 
   <div class="al-main">
     <div class="al-content">
-      <content-top></content-top>
+      <content-top ng-show="isLoggedIn"> </content-top>
+
       <div ui-view></div>
     </div>
   </div>
 
   <footer class="al-footer clearfix">
-    <div class="al-footer-right">Murat <i class="ion-heart"></i></div>
+    <div class="al-footer-right">Murat {{isLoggedIn}} <i class="ion-heart"></i></div>
     <div class="al-footer-main clearfix">
-      <div class="al-copy">Blur Admin 2016</div>
+      <div class="al-copy">Crystall Cleaning 2016</div>
       <ul class="al-share clearfix">
         <li><i class="socicon socicon-facebook"></i></li>
         <li><i class="socicon socicon-twitter"></i></li>

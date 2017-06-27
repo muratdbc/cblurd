@@ -1,0 +1,36 @@
+<main class="auth-main">
+<div class="auth-block row  col-lg-offset-3 col-lg-4 col-sm-6 col-md-8">
+      <h2 class="text-center">Sign Up to Crystall Cleaning</h2>
+      <a href="/home.html#/login" class="auth-link">Already have a Blur Admin account? Sign in!</a>
+    <hr>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="inputName3" class="col-sm-2 control-label">Name</label>
+
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputName3" placeholder="Full Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+
+        <div class="col-sm-10">
+          <input type="email" ng-model="user.email" class="form-control" id="inputEmail3" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+
+        <div class="col-sm-10">
+          <input type="password" ng-model="user.password" class="form-control" id="inputPassword3" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button ng-click="signup()" class="btn btn-default btn-auth">Sign up</button>
+        </div>
+      </div>
+    </form>
+  <br>
+</div>
+</main>

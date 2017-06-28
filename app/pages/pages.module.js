@@ -22,7 +22,7 @@
       .run(["$cookies","$location","$rootScope",function($cookies,$location,$rootScope){
         var isLoggedIn
         // $cookies.put("user_id",1)
-        if($cookies.get('user_id')==="1"){
+        if($cookies.get('user_id')){
           $rootScope.isLoggedIn=true
           $location.path('/cleaning/cleanings');
         }else{
